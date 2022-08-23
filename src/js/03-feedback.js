@@ -16,7 +16,7 @@ const refs = {
 const onFormSubmit = e => {
   e.preventDefault();
   if (localStorageValues.email === '' || localStorageValues.message === '') {
-    return alert('Please enter a valid email address');
+    return alert('Please fill all the fields');
   }
   if (localStorage.getItem(STORAGE_KEY)) {
     console.log(localStorage.getItem(STORAGE_KEY));
