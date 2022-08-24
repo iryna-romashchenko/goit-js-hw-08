@@ -14,15 +14,19 @@ const imageCard = onCreateGalleryItem(galleryItems);
 imagesContainer.insertAdjacentHTML('beforeend', imageCard);
 function onCreateGalleryItem(galleryItems) {
   return galleryItems
-
-    .map(({ original, preview, description }) => {
+    .map(({ preview, original, description }) => {
       return `
-            <a class ="gallery__link" href="${original}">
-            <img class ="gallery__image lazyload"
-             data-src = "${preview}"
-             data-source = "${original}"
-            alt = "${description}"/>
-            </a>`;
+            <div class ="gallery__item">
+            <a class ="gallery__link" href='${original}'>
+            <img
+            class ="gallery__image lazyload"
+            data-src = "${preview}"
+            data-source = "${original}"
+            alt = "${description}"
+            />
+            </a>
+            </div>
+        `;
     })
     .join('');
 }
